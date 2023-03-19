@@ -11,20 +11,20 @@ const Skilz: React.FC = () => {
   }, []);
 
   return (
-    <div data-aos-offset="20" data-aos="fade-left" data-aos-duration="2000" className={style.notions}>
-      <div data-aos-offset="20" data-aos="zoom-in" className={style.aNotion}>
+    <div data-aos-offset="10" data-aos="fade-left" data-aos-duration="2000" className={style.notions}>
+      <div data-aos-offset="10" data-aos="zoom-in" className={style.aNotion}>
         <div className={style.NNC}>
           <p className={style.notionName}>UI/UX</p>
         </div>
         <p className={style.notiontype}>Front</p>
       </div>
-      <div data-aos-offset="20" data-aos="zoom-in" className={style.aNotion}>
+      <div data-aos-offset="10" data-aos="zoom-in" className={style.aNotion}>
         <div className={style.NNC}>
           <p className={style.notionName}>Responsivness</p>
         </div>
         <p className={style.notiontype}>Front</p>
       </div>
-      <div data-aos-offset="20" data-aos="zoom-in" className={style.aNotion}>
+      <div data-aos-offset="10" data-aos="zoom-in" className={style.aNotion}>
         <div className={style.NNC}>
           <p className={style.notionName}>API building</p>
         </div>
@@ -36,7 +36,7 @@ const Skilz: React.FC = () => {
         </div>
         <p className={style.notiontype}>Humain</p>
       </div> */}
-      <div data-aos-offset="20" data-aos="zoom-in" className={style.aNotion}>
+      <div data-aos-offset="10" data-aos="zoom-in" className={style.aNotion}>
         <div className={style.NNC}>
           <p className={style.notionName}>collaboration </p>
         </div>

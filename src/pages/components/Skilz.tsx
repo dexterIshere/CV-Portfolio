@@ -69,7 +69,7 @@ const Skilz: React.FC = () => {
             {/* <h1 className="compT">Competences</h1> */}
             <h2 data-aos="fade-left" className="compUT">web development</h2>
             <p data-aos="fade-left" className="compP">
-            Je suis un développeur fullstack chevronné qui a travaillé avec une multitude de technologies telles que JavaScript, React, Vue.js, Node.js, Ruby on Rails, Python, Django, MongoDB, PostgreSQL et AWS. Ma connaissance approfondie de ces technologies me permet de développer des applications web robustes et évolutives, tout en assurant la sécurité et la convivialité de l'interface utilisateur. Je suis également passionné par l'amélioration continue des performances et de l'expérience utilisateur, en utilisant des outils tels que Webpack, Babel et Redux. Avec des compétences en gestion de projet, une attitude orientée vers les résultats et un désir de résoudre les problèmes complexes, je suis un atout précieux pour toute entreprise en quête d'un développeur fullstack de qualité supérieure.
+            Je suis un développeur fullstack chevronné qui a travaillé avec une multitude de technologies telles que JavaScript, React, Vue.js, Node.js, Ruby on Rails, Python, Django, MongoDB, PostgreSQL et AWS. Ma connaissance approfondie de ces technologies me permet de développer des applications web robustes et évolutives, tout en assurant la sécurité et la convivialité de l'interface utilisateur.
             </p>
           </div>
         </div>
