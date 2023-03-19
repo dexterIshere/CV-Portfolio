@@ -8,7 +8,7 @@ const HoneComp: React.FC = () => {
   const [textArray, setTextArray] = useState<string[]>([]);
 
   useEffect(() => {
-    setTextArray(["Compétences","手腕","Skills","Kompetenzen","技能","competencias"]);
+    setTextArray(["Compétences","手腕","навыки","Skills","Kompetenzen","技能","competencias"]);
   }, []);
 
   useEffect(() => {
