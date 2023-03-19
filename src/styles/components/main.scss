@@ -1,0 +1,123 @@
+main {
+  padding: 2rem 2rem;
+  margin: 0;
+  overflow: hidden;
+  @include m.center(100%, 100%);
+
+  .container {
+    z-index: 1;
+    transition: 1s;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-shadow: -19px 50px 80px 14px rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4) 0px 2px 4px, rgb(80 35 127 / 79%) 0px 0px 1px 1.5px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset, rgba(205, 139, 255, 0.635) 0px 0px 0px 3px, rgb(0 0 0 / 28%) 0px 1px 3px 2px, 0 0 0.1vw 0.1vw #b3a0eb,
+   0 0 0.2vw 0.2vw #a255cf9e, 0 0 2vw 0.2vw #bf6dd48c,
+    0 0 0.3vw 0.1vw #bf6dd48c, 0 0 0.3vw 0.2vw #a255cf9e,
+    0 0 0.1vw 0.1vw #b3a0eb;
+    // background: linear-gradient(
+    //   11deg,
+    //   rgba(33, 31, 45, 1) 0%,
+    //   rgba(49, 47, 59, 1) 35%,
+    //   rgba(64, 57, 82, 1) 51%,
+    //   rgba(90, 81, 109, 1) 69%,
+    //   rgba(90, 81, 109, 1) 89%,
+    //   rgba(90, 81, 109, 1) 100%
+    // );
+    background: linear-gradient(
+      11deg,
+      rgb(29, 24, 42) 0%,
+      rgb(38, 32, 48) 30%,
+      rgb(46, 34, 57) 50%,
+      rgb(62, 51, 77) 80%,
+      rgb(78, 67, 96) 95%,
+      rgb(90, 81, 109) 100%
+    );
+    font-family: "Poppins", sans-serif;
+
+    .leftSide {
+      @include m.column(43%, auto);
+      // box-shadow: rgb(32 34 38 / 88%) 0px 1px 1px,
+      //   rgb(29 30 31 / 94%) 0px 0px 1px 1px, rgb(26 26 30 / 5%) 3px 0px 8px 1px;
+
+      // border-right: double #332f44;
+      position: relative;
+      box-shadow: rgb(139 130 147 / 8%) -1.5px 0px 0px 0px inset,
+        rgb(1 1 1 / 82%) -0.5px 0px 0px 0px inset,
+        #000000 -0.25px 0px 0px 0px inset;
+
+      .photoContainer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        position: relative;
+        filter: brightness(0.9);
+
+        .ppbox {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          display: flex;
+
+          .bgpp {
+            width: 100%;
+            height: auto;
+            z-index: 0;
+            position: absolute;
+            filter: brightness(1.1);
+          }
+          .pp {
+            backdrop-filter: blur(3px);
+            z-index: 15;
+            width: 100%;
+            box-shadow: inset 0px 0px 50px 7px #110719;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .rightSide {
+      z-index: 15;
+      @include m.column(100%, 100%);
+      // box-shadow: 1.1px 0px 1px 0px #18141c69 inset,
+      //   1px 0px 1.5px 0px rgb(77 68 84 / 46%) inset;
+      // box-shadow: rgb(139 130 147 / 8%) 1.5px 0px 0px 0px inset,
+      //   rgb(1 1 1 / 82%) 0.5px 0px 0px 0px inset,
+      //   #000000 0.25px 0px 0px 0px inset;
+      padding: 2rem 2rem 0rem 2rem;
+      margin-bottom: 2rem;
+
+      .notionCompC {
+        @include m.column(100%, 100%);
+
+        .compDevD {
+          @include m.column(100%, 100%);
+          // box-shadow: rgb(139 130 147 / 8%) 0px -1.5px 0px 0px inset,
+          //   rgb(1 1 1 / 82%) 0px -0.5px 0px 0px inset,
+          //   #000000 0px -0.25px 0px 0px inset;
+        }
+      }
+
+      .PorfolioZ {
+        @include m.center(100%, 100%);
+        box-shadow: rgb(139 130 147 / 8%) 0px 1.5px 0px 0px inset,
+          rgb(5 5 6 / 85%) 0px 0.5px 0px 0px inset,
+          #000000 0px 0.25px 0px 0px inset;
+      }
+    }
+  }
+
+  .container::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background: #1e1e2400;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background: rgba(209, 178, 253, 0);
+  }
+}

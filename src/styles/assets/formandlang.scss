@@ -1,0 +1,158 @@
+.formationsC {
+  overflow: hidden;
+  @include m.column(100%, 100%);
+  box-shadow: rgb(139 130 147 / 8%) -1.5px 0px 0px 0px inset,
+    rgb(1 1 1 / 82%) -0.5px 0px 0px 0px inset, #000000 -0.25px 0px 0px 0px inset;
+  .tglFL {
+    z-index: 20;
+    padding: 1rem 0;
+    @include m.center(100%, auto);
+    box-shadow: rgb(0 0 0 / 93%) -3px 12px 20px 0px;
+    .formation {
+      @include m.center(0, 100%);
+      min-width: 50%;
+      background: transparent;
+      border: none;
+      transition: 600ms;
+      outline: none;
+      cursor: pointer;
+      @include m.textmaj(v.$secondary-white, 0.8rem, 400, 5px);
+    }
+
+    .formation:hover {
+      @include m.textmaj(v.$primary-white, 0.8rem, 400, 5.5px);
+      filter: brightness(1.8);
+    }
+    .formation:first-child {
+      box-shadow: rgb(139 130 147 / 8%) -1.5px 0px 0px 0px inset,
+        rgb(1 1 1 / 82%) -0.5px 0px 0px 0px inset,
+        #000000 -0.25px 0px 0px 0px inset;
+    }
+  }
+
+  .formContain {
+    transition: 600ms;
+    padding: 0 1rem;
+    @include m.column(100%, 100%);
+    background: rgb(18, 16, 23);
+    background: linear-gradient(
+      15deg,
+      rgba(18, 16, 23, 1) 0%,
+      rgba(36, 30, 47, 1) 100%
+    );
+
+    .rubForm {
+      transition: 600ms;
+      @include m.column(100%, 100%);
+
+      .SecteurHeader {
+        position: relative;
+        @include m.centerAdd(100%, auto, none, center);
+        margin: 2rem 0 0rem 0;
+        border-bottom: 0.25px solid #786885b5;
+
+        .FrubT {
+          @include m.textmaj(v.$primary-white, 1rem, 500, 2px);
+          align-items: center;
+          max-width: 80%;
+
+          margin: 0;
+        }
+
+        svg {
+          left: 0;
+          @include m.textmaj(v.$primary-white, 1rem, 500, 0px);
+          margin-right: 1rem;
+        }
+
+        button {
+          right: 0;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2.5rem;
+          height: 1.5rem;
+          background-color: transparent;
+          border: none;
+
+          svg {
+            @include m.textmaj(v.$primary-white, 2rem, 100, 0px);
+            margin: 0rem;
+            transition: transform 0.5s ease;
+            transform-origin: center;
+          }
+
+          .rotate {
+            transform: rotateX(180deg);
+          }
+        }
+      }
+
+      .UTformC {
+        width: 100%;
+        height: 1rem;
+        margin: 1rem 0;
+        align-items: center;
+        display: flex;
+        @include m.textmaj(v.$primary-white, 0.8rem, 500, 1px);
+
+        .FrubUT {
+          @include m.textmaj(v.$primary-white, 0.8rem, 500, 1px);
+          margin: 0;
+          padding-left: 1.5rem;
+        }
+      }
+
+      .rubsubjectsFC {
+        @include m.column(100%, 100%);
+        padding: 0 1.5rem;
+        .Fsubject {
+          @include m.centerAdd(100%, 100%, none, center);
+
+          p {
+            @include m.textmaj(v.$primary-white, 0.6rem, 400, 1px);
+            margin: 0 0.5rem 0 0;
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    .rubEtLang {
+      transition: 600ms;
+      @include m.centerAdd(100%, max-content, center, center);
+      padding: 1rem;
+      flex-wrap: wrap;
+      .Lang {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        // margin-right: 1rem;
+        width: 40%;
+        text-align: center;
+        .TLang {
+          margin-right: 0; /* supprimer l'espacement horizontal */
+          @include m.textmaj(v.$primary-white, 0.9rem, 400, 4px);
+        }
+        .NvlLang {
+          @include m.textmaj(v.$primary-purple, 1.2rem, 300, 2px);
+          filter: brightness(1.8) drop-shadow(1px 1px 5px #f763ffb9);
+        }
+      }
+      .Lang:nth-child(1) {
+        box-shadow: v.$RborderShadowOne, v.$UborderShadowOne;
+      }
+      .Lang:nth-child(2) {
+        box-shadow: v.$UborderShadowOne;
+      }
+      .Lang:nth-child(3) {
+        box-shadow: v.$RborderShadowOne;
+      }
+    }
+  }
+}

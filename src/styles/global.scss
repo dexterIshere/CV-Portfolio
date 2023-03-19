@@ -1,0 +1,62 @@
+@use "./functions/variables.scss" as v;
+@use "./functions/mixin.scss" as m;
+@use "./functions/variables.scss" as a;
+
+@import "./components/main.scss";
+@import "./components/Loading.scss";
+@import "./functions/mediaquery.scss";
+@import "./assets/porfolioLink.module.scss";
+@import "./assets/descriptions.scss";
+@import "./assets/compdev.module.scss";
+@import "./assets/formandlang.scss";
+@import "./assets/progressbar.scss";
+
+html {
+  body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
+    background: linear-gradient(
+      36deg,
+      rgba(38, 31, 49, 1) 14%,
+      rgb(81, 56, 95) 100%
+    );
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}

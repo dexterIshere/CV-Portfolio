@@ -1,0 +1,49 @@
+@use "./variables.scss" as v;
+
+@mixin center($x, $y) {
+  width: $x;
+  height: $y;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerAdd($x, $y, $jc, $ai) {
+  width: $x;
+  height: $y;
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin column($x, $y) {
+  width: $x;
+  height: $y;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin textmaj($c, $s, $w, $ls) {
+  text-transform: uppercase;
+  color: $c;
+  font-size: $s;
+  font-weight: $w;
+  letter-spacing: $ls;
+}
+
+@mixin Puce() {
+  clip-path: polygon(
+    5% 0%,
+    95% 0%,
+    100% 10%,
+    100% 90%,
+    95% 100%,
+    5% 100%,
+    0% 90%,
+    0% 10%
+  );
+}
+
+@mixin pPuce() {
+  clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%) !important;
+}

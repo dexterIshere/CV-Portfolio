@@ -1,0 +1,155 @@
+.profilDesC {
+  @include m.column(100%, auto);
+  position: relative;
+  // box-shadow: -1.1px 0px 1px 0px #18141c inset,
+  //   -1px 0px 2px 0px rgb(69 64 71 / 56%) inset;
+  box-shadow: rgb(139 130 147 / 8%) -1.5px 0px 0px 0px inset,
+    rgb(1 1 1 / 82%) -0.5px 0px 0px 0px inset, #000000 -0.25px 0px 0px 0px inset;
+  padding: 2rem 2rem;
+
+  .TplusDisp {
+    @include m.centerAdd(100%, 100%, none, center);
+
+    .typeTitle {
+      @include m.textmaj(v.$primary-white, 1rem, 900, 4px);
+      width: fit-content;
+      margin: 0;
+    }
+
+    .ledDispoC {
+      @include m.centerAdd(100%, 100%, right, center);
+      position: relative;
+
+      .ledDispo {
+        margin-right: 0.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        filter: brightness(0.8);
+        // background-color: #47474770;
+        background: linear-gradient(
+          55deg,
+          rgba(70, 250, 88, 1) 0%,
+          rgba(86, 241, 87, 0.7904411764705882) 58%,
+          rgba(88, 242, 89, 0.8128501400560224) 59%,
+          rgba(154, 255, 155, 1) 79%,
+          rgba(125, 255, 126, 1) 100%
+        );
+        box-shadow: rgba(94, 255, 108, 0.459) 0 -1px 7px 1px,
+          inset rgba(75, 255, 99, 0.557) 0 -1px 9px, #36ff2875 0 2px 6px;
+        border-radius: 50%;
+        border: 1px outset#3f38476f;
+        animation: WoupWoup 2s;
+        animation-iteration-count: 5;
+      }
+
+      .ledDispoT {
+        @include m.textmaj(#d3baff, 0.5rem, 500, 1px);
+        animation: Fugace 2s infinite;
+        animation-iteration-count: 5;
+      }
+    }
+  }
+
+  @keyframes Fugace {
+    from {
+      filter: brightness(0.2);
+    }
+    50% {
+      filter: brightness(1.5);
+      opacity: 1;
+    }
+    to {
+      filter: brightness(0.2);
+    }
+  }
+
+  @keyframes WoupWoup {
+    from {
+      background-color: #6a6a6a45;
+      filter: brightness(0.35);
+    }
+    50% {
+      filter: brightness(0.9);
+      background: linear-gradient(
+        55deg,
+        rgba(70, 250, 88, 1) 0%,
+        rgba(86, 241, 87, 0.7904411764705882) 58%,
+        rgba(88, 242, 89, 0.8128501400560224) 59%,
+        rgba(154, 255, 155, 1) 79%,
+        rgba(125, 255, 126, 1) 100%
+      );
+      box-shadow: rgba(94, 255, 108, 0.459) 0 -1px 7px 1px,
+        inset rgba(75, 255, 99, 0.557) 0 -1px 9px, #36ff2875 0 2px 6px;
+    }
+    to {
+      background-color: #6a6a6a45;
+      filter: brightness(0.35);
+    }
+  }
+
+  .CVName {
+    filter: drop-shadow(1px 2px 3px rgb(90, 16, 159));
+    margin: 1.5rem 0;
+
+    width: 100%;
+    text-transform: uppercase;
+    color: #d9dae6;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 10px;
+  }
+
+  .emailPress {
+    margin: 2rem 0rem;
+    margin-top: 0;
+
+    @include m.center(50%, auto);
+    padding: 0.7rem 0.85rem;
+    background: linear-gradient(
+      210deg,
+      rgb(77, 27, 140) 0%,
+      rgb(44, 18, 74) 100%
+    );
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #a989dd;
+    box-shadow: rgb(0 0 0 / 42%) 0px 2px 2px, rgb(0 0 0 / 57%) -3px 7px 8px -3px,
+      rgb(235 235 235 / 10%) -2px 3px 10px inset;
+    font-size: 1rem;
+    font-weight: 550;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 600ms;
+
+    p {
+      margin: 0;
+      margin-right: 0.5rem;
+    }
+
+    svg {
+      transition: 600ms;
+    }
+  }
+
+  .emailPress:hover {
+    filter: brightness(1.4);
+    // color: #c295dc;
+
+    svg {
+      scale: 1.3;
+    }
+  }
+
+  .resuMe {
+    // filter: drop-shadow(0pc 0px 1px rgb(0, 0, 0));
+    margin: 0;
+    display: flex;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    word-spacing: -0.05em;
+    @include m.textmaj(v.$secondary-white, 1rem, 400, 1px);
+    text-transform: lowercase;
+  }
+}

@@ -1,0 +1,60 @@
+@media screen and (max-width: 992px) {
+  body {
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    padding: 0;
+  }
+  main .container {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  main .container .leftSide {
+    width: 100%;
+  }
+
+  main .container .rightSide {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .formationsC {
+    
+    .formContain {
+      min-height: 70vh !important;
+    }
+  }
+
+  .profilDesC {
+    box-shadow: none !important;
+  }
+
+  .formation:first-child {
+    box-shadow: none !important;
+    border-right: 0.5px solid #191919a4 !important;
+  }
+
+  .CompExpPartC {
+    flex-direction: column;
+
+    .CompExpPart {
+      width: 100% !important;
+      .digitalT {
+        width: 100% !important;
+      }
+
+      .compT {
+        width: 100% !important;
+        @include m.textmaj(v.$primary-white, 1rem !important, 600, 6px);
+      }
+    }
+    .Entete {
+      width: 100% !important;
+
+      .polygonC {
+        display: none !important;
+      }
+    }
+  }
+}

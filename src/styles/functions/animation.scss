@@ -1,0 +1,13 @@
+@keyframes blinkYellow {
+  from {
+    background-color: #ff0;
+  }
+  50% {
+    background-color: #aa0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px,
+      #ff0 0 2px 0;
+  }
+  to {
+    background-color: #ff0;
+  }
+}
