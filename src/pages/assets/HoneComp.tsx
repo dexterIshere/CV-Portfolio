@@ -8,13 +8,13 @@ const HoneComp: React.FC = () => {
   const [textArray, setTextArray] = useState<string[]>([]);
 
   useEffect(() => {
-    setTextArray(["Compétences", "Skills", "Kompetenzen","手腕", "技能", "competencias"]);
+    setTextArray(["Compétences","手腕","Skills","Kompetenzen","技能","competencias"]);
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (letterIndex < textArray[textIndex].length) {
-        setHeaderText((prev) => prev + textArray[textIndex][letterIndex]);
+      if (textArray[textIndex]?.[letterIndex]) {
+        setHeaderText((prev) => prev + textArray[textIndex]?.[letterIndex]);
         setLetterIndex((prev) => prev + 1);
       } else {
         setTimeout(() => {
@@ -30,7 +30,7 @@ const HoneComp: React.FC = () => {
 
   return (
     <>
-    <div className="digitalT"></div>
+      <div className="digitalT"></div>
       <h1 className="compT">{headerText}</h1>
       <style jsx>{`
         h1:after {
