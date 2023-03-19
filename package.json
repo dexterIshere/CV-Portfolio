@@ -7,7 +7,15 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "migrate:dev": "yarn dotenv -e .env.local prisma migrate dev",
+    "db:push": "yarn dotenv -e .env.local prisma db push",
+    "migrate:reset": "yarn dotenv -e .env.local prisma migrate reset",
+    "db:seed": "yarn dotenv -e .env.local prisma db seed",
+    "prisma:generate": "yarn dotenv -e .env.local prisma generate",
+    "prisma:resolve": "yarn dotenv -e .env.local prisma migrate resolve --applied <migration_name>",
+    "prisma:studio": "yarn dotenv -e .env.local prisma studio",
+    "production:build": "yarn prisma generate && npx prisma migrate deploy && next build"
   },
   "dependencies": {
     "@prisma/client": "^4.9.0",
