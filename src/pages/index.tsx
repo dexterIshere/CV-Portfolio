@@ -112,7 +112,7 @@ const Home: NextPage = () => {
           </p> */}
         </div>
         <div id="contact-form">
-          <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
+          <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey ?? ""}>
             <ContactForm />
           </GoogleReCaptchaProvider>
         </div>
