@@ -8,6 +8,7 @@ import {
 import style from "../../styles/modules/components/contactForm.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useRecaptchaScore } from "../hooks/useRecaptchaScore";
 
 const contactSchema = z.object({
   companyEmail: z.string().email("Invalid email address."),
@@ -59,8 +60,8 @@ export default function ContactForm() {
       return;
     }
 
-    const score = await executeRecaptcha("contact_form");
-    console.log("reCAPTCHA score:", score);
+    const token = await executeRecaptcha("contact_form");
+    setRecaptchaToken(token);
   }, [executeRecaptcha]);
 
   useEffect(() => {
@@ -87,10 +88,11 @@ export default function ContactForm() {
 
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const recaptchaScore = useRecaptchaScore();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormValues) => {
     handleReCaptchaVerify();
-    console.log(data);
 
     // Update the timestamp of the user's last attempt
     localStorage.setItem("lastAttemptTimestamp", Date.now().toString());
@@ -101,8 +103,15 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       });
+
+      // Vérifiez le score reCAPTCHA avant d'envoyer l'email
+      if (recaptchaScore !== null && recaptchaScore >= 0.5) {
+        // ... (envoyer l'email avec les données)
+      } else {
+        console.log("reCAPTCHA validation failed");
+      }
 
       if (response.ok) {
         setMessage("Email envoyé avec succès.");
@@ -183,9 +192,9 @@ export default function ContactForm() {
               {countdown > 1 ? "s" : ""}.
             </p>
           )}
+          <GoogleReCaptcha onVerify={handleReCaptchaVerify} />
         </div>
       </form>
-
       <div className={style.messAndCit}>
         <p className={style.PmessAndCit}>
           Des questions où des propositions ? N'hésitez pas à utiliser ce
