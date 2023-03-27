@@ -152,7 +152,7 @@
     hyphens: auto;
     -webkit-hyphens: auto;
     word-spacing: -0.05em;
-    @include m.textmaj(v.$secondary-white, 1rem, 400, 1px);
+    @include m.textmaj(v.$secondary-white, 15px, 400, 2px);
     text-transform: none;
   }
 }

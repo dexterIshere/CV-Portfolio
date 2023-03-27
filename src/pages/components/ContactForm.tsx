@@ -85,6 +85,9 @@ export default function ContactForm() {
     handleReCaptchaVerify();
   }, [handleReCaptchaVerify]);
 
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
   const onSubmit = async (data: any) => {
     handleReCaptchaVerify();
     console.log(data);
@@ -102,12 +105,15 @@ export default function ContactForm() {
       });
 
       if (response.ok) {
-        console.log("Email envoyé avec succès.");
+        setMessage("Email envoyé avec succès.");
+        setMessageType("success");
       } else {
-        console.error("Erreur lors de l'envoi de l'email.");
+        setMessage("Erreur lors de l'envoi de l'email.");
+        setMessageType("error");
       }
     } catch (error) {
-      console.error("Erreur lors de l'envoi de la requête:", error);
+      setMessage("Erreur lors de l'envoi de la requête: " + error);
+      setMessageType("error");
     }
   };
 
@@ -167,26 +173,29 @@ export default function ContactForm() {
             )}
           </div>
         </div>
-        <input className={style.contactSub} type="submit" value="Submit" />
-        {/* {canSubmit ? (
-          
-        ) : (
-          <p className={style.contactError}>
-            You can submit the form again in {countdown} minute
-            {countdown > 1 ? "s" : ""}.
-          </p>
-        )} */}
+        <div className={style.endForm}>
+          {message && <p className={style[messageType]}>{message}</p>}
+          {canSubmit ? (
+            <input className={style.contactSub} type="submit" value="Submit" />
+          ) : (
+            <p className={style.contactError}>
+              You can submit the form again in {countdown} minute
+              {countdown > 1 ? "s" : ""}.
+            </p>
+          )}
+        </div>
       </form>
 
       <div className={style.messAndCit}>
         <p className={style.PmessAndCit}>
           Des questions où des propositions ? N'hésitez pas à utiliser ce
           formulaire pour me contacter. Je m'engage à vous répondre dès que
-          possible. Merci de votre intérêt !
+          possible.
+          <br /> Merci de votre intérêt !
         </p>
         <p className={style.CmessAndCit}>
-          "Nous ne pouvons pas nous permettre de travailler sans relâche à la
-          perfection la communication."
+          "La victoire dépend de la capacité de l'oreille à écouter et de la
+          langue à parler."
         </p>
         <p className={style.CPmessAndCit}>Sun Tzu, L'Art de la guerre</p>
       </div>

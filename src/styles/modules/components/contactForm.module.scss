@@ -52,8 +52,6 @@
       );
       @include m.centerAdd(6rem, 3rem, center, center);
       margin-left: auto;
-      margin-right: 0.2rem;
-      margin-top: 0.2rem;
       text-align: center;
     }
 
@@ -100,6 +98,14 @@
           rgb(45, 32, 58) 73%,
           rgb(68, 43, 86) 100%
         );
+
+        label {
+          height: 100%;
+        }
+
+        input {
+          height: 100%;
+        }
       }
 
       .contactInputContainer:hover {
@@ -155,7 +161,7 @@
       }
 
       .contactneed {
-        @include m.centerAdd(100%, auto, space-between, center);
+        @include m.centerAdd(100%, 5rem, space-between, center);
         margin-bottom: 0.2rem;
 
         .contactInputContainer {
@@ -190,17 +196,19 @@
 
     .PmessAndCit {
       @include m.column(100%, fit-content);
-      @include m.textmaj(v.$primary-white, 20px, 700, 1px);
+      @include m.textmaj(v.$primary-white, 20px, 700, 3px);
       text-align: justify;
       margin: 0;
+      hyphens: auto;
     }
 
     .CmessAndCit {
       @include m.column(100%, fit-content);
-      @include m.textmaj(v.$primary-white, 1rem, 400, 2px);
+      @include m.textmaj(v.$primary-white, 16px, 400, 2px);
       text-align: justify;
       text-transform: none;
       margin: 2rem 0 0.5rem 0;
+      hyphens: auto;
     }
 
     .CPmessAndCit {
@@ -217,10 +225,59 @@
   @include m.textmaj(#ff2768c3, 0.65rem, 700, 2px);
 }
 
+.endForm {
+  .contactError {
+    margin-left: auto;
+  }
+}
+
+.endForm {
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  @include m.centerAdd(100%, fit-content, none, center);
+
+  .success,
+  .error {
+    @include m.center(fit-content, fit-content);
+    padding: 0.25rem 1rem;
+    @include m.textmaj(v.$primary-white, 0.8rem, 500, 4px);
+    border-radius: 5px;
+    text-align: center;
+    margin: 0;
+    margin-right: auto;
+    transition: 600ms;
+  }
+
+  .error {
+    background-color: #ff276894;
+  }
+
+  .success {
+    background-color: rgba(111, 255, 111, 0.715);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .contactC {
+    flex-direction: column;
+    height: 100%;
     .contactForm {
       width: 100%;
+
+      .contactMess {
+        min-height: 15rem;
+      }
+    }
+
+    .messAndCit {
+      margin-top: 2rem;
+      width: 100%;
+      padding: 0rem;
+
+      .PmessAndCit,
+      .CmessAndCit,
+      .CPmessAndCit {
+        text-align: justify;
+      }
     }
   }
 }

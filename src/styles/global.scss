@@ -3,6 +3,7 @@
 @use "./functions/variables.scss" as a;
 
 @import "./components/main.scss";
+@import "./modules/components/contactForm.module.scss";
 @import "./components/Loading.scss";
 @import "./functions/mediaquery.scss";
 @import "./assets/porfolioLink.module.scss";

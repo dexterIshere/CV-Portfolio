@@ -84,9 +84,9 @@ const Home: NextPage = () => {
               </div>
 
               <p className="resuMe">
-                Autodidacte dans le domaine du développement web, je suis doté
-                d'une passion pour la technologie et d'une curiosité insatiable
-                envers ces dèrnières.
+                Autodidacte dans le domaine du développement web, j'ai une
+                passion pour la technologie et une curiosité insatiable envers
+                ces dèrnières.
                 <br /> Avec un peu plus de deux ans d'expérience en
                 développement web.
                 <br /> Mon approche créative et mon désir de perfectionnement

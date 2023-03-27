@@ -15,7 +15,11 @@
         z-index: 5;
         @include m.centerAdd(60%, 3rem, none, none);
         margin: 0;
-        background: linear-gradient(36deg, rgb(160, 52, 197) 0%, rgb(98, 43, 174) 100%);
+        background: linear-gradient(
+          36deg,
+          rgb(160, 52, 197) 0%,
+          rgb(98, 43, 174) 100%
+        );
         filter: blur(15px);
         animation: fade 15s linear infinite;
       }
@@ -29,7 +33,6 @@
         }
         100% {
           filter: blur(10px) brightness(1.9);
-
         }
       }
 
@@ -39,14 +42,22 @@
         padding: 0.5rem 1rem;
         margin: 0;
         margin-bottom: 1rem;
-        font-family:'Orbitron', sans-serif;
+        font-family: "Orbitron", sans-serif;
         border-radius: 5px;
-        background: linear-gradient(60deg, rgb(9 7 12) 0%, rgb(17 14 23) 29%, rgb(14 12 18) 51%, rgb(17 14 25) 76%, rgb(13 9 20) 100%);
+        background: linear-gradient(
+          60deg,
+          rgb(9 7 12) 0%,
+          rgb(17 14 23) 29%,
+          rgb(14 12 18) 51%,
+          rgb(17 14 25) 76%,
+          rgb(13 9 20) 100%
+        );
         @include m.textmaj(v.$primary-white, 1.6rem, 600, 6px);
-        box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px, rgba(0, 0, 0, 0.26) 0px 7px 13px -3px, rgba(0, 0, 0, 0.33) 0px -3px 0px inset, rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
-        }
-
-      
+        box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+          rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.33) 0px -3px 0px inset,
+          rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+      }
 
       .compUT {
         margin: 0 0 1rem 0;
@@ -54,7 +65,8 @@
       }
 
       .compP {
-        @include m.textmaj(v.$secondary-white, 1rem, 400, 1px);
+        @include m.textmaj(v.$secondary-white, 15px, 400, 2px);
+
         text-align: justify;
         hyphens: auto;
         -webkit-hyphens: auto;
