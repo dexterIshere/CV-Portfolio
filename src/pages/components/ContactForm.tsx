@@ -8,7 +8,7 @@ import {
 import style from "../../styles/modules/components/contactForm.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useRecaptchaScore } from "../hooks/useRecaptchaScore";
+import useRecaptchaScore from "../hooks/useRecaptchaScore";
 
 const contactSchema = z.object({
   companyEmail: z.string().email("Invalid email address."),
