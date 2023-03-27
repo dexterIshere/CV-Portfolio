@@ -1,6 +1,5 @@
 .profilDesC {
   @include m.column(100%, auto);
-  position: relative;
   // box-shadow: -1.1px 0px 1px 0px #18141c inset,
   //   -1px 0px 2px 0px rgb(69 64 71 / 56%) inset;
   box-shadow: rgb(139 130 147 / 8%) -1.5px 0px 0px 0px inset,
@@ -100,11 +99,11 @@
   }
 
   .emailPress {
-    margin: 2rem 0rem;
-    margin-top: 0;
-
-    @include m.center(50%, auto);
-    padding: 0.7rem 0.85rem;
+    border-radius: 5px;
+    transition: transform 0.4s ease;
+    margin: 0;
+    margin-bottom: 1rem;
+    @include m.center(100%, 2.5rem);
     background: linear-gradient(
       210deg,
       rgb(77, 27, 140) 0%,
@@ -113,16 +112,14 @@
     cursor: pointer;
     outline: none;
     border: none;
-    color: #a989dd;
+    @include m.textmaj(v.$primary-white, 0.7rem, 400, 2px);
     box-shadow: rgb(0 0 0 / 42%) 0px 2px 2px, rgb(0 0 0 / 57%) -3px 7px 8px -3px,
       rgb(235 235 235 / 10%) -2px 3px 10px inset;
-    font-size: 1rem;
-    font-weight: 550;
-    letter-spacing: 3px;
+
     text-transform: uppercase;
-    transition: 600ms;
 
     p {
+      transition: 600ms;
       margin: 0;
       margin-right: 0.5rem;
     }
@@ -130,6 +127,11 @@
     svg {
       transition: 600ms;
     }
+  }
+
+  .clicked {
+    /* styles pour l'effet de zoom */
+    transform: scale(1.02);
   }
 
   .emailPress:hover {
@@ -144,12 +146,36 @@
   .resuMe {
     // filter: drop-shadow(0pc 0px 1px rgb(0, 0, 0));
     margin: 0;
+    margin-top: 1rem;
     display: flex;
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
     word-spacing: -0.05em;
     @include m.textmaj(v.$secondary-white, 1rem, 400, 1px);
-    text-transform: lowercase;
+    text-transform: none;
+  }
+}
+
+.oruseform {
+  @include m.centerAdd(100%, 2rem, none, center);
+  @include m.textmaj(v.$secondary-white, 1rem, 400, 1px);
+  margin-bottom: 1rem;
+
+  p {
+    @include m.centerAdd(fit-content, 100%, none, center);
+    margin: 0rem 1rem;
+  }
+
+  .proflineUp {
+    @include m.centerAdd(100%, 100%, none, center);
+
+    .proflineUpIn {
+      @include m.centerAdd(100%, 1px, center, center);
+
+      box-shadow: rgb(139 130 147 / 8%) 0px -1.5px 0px 0px inset,
+        v.$secondary-white 0px -0.5px 0px 0px inset,
+        v.$secondary-white 0px -0.25px 0px 0px inset;
+    }
   }
 }

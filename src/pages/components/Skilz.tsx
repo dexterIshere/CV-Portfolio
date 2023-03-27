@@ -21,11 +21,10 @@ import {
   SiNextdotjs,
 } from "react-icons/si";
 import Link from "next/link";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import Aos from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import HoneComp from "../assets/HoneComp";
-
 
 const Skilz: React.FC = () => {
   const [showLeftButton, setShowLeftButton] = useState(false);
@@ -46,7 +45,7 @@ const Skilz: React.FC = () => {
   };
 
   useEffect(() => {
-    Aos.init({duration: 1000});
+    Aos.init({ duration: 1000 });
   }, []);
 
   const handleScrollButtonClick = (direction: "left" | "right") => () => {
@@ -65,11 +64,18 @@ const Skilz: React.FC = () => {
       <div className="CompExpPartC">
         <div className="CompExpPart">
           <div className="ICompC">
-            <HoneComp/>
+            <HoneComp />
             {/* <h1 className="compT">Competences</h1> */}
-            <h2 data-aos="fade-left" className="compUT">web development</h2>
+            <h2 data-aos="fade-left" className="compUT">
+              web development
+            </h2>
             <p data-aos="fade-left" className="compP">
-            Je suis un développeur fullstack chevronné qui a travaillé avec une multitude de technologies telles que JavaScript, React, Vue.js, Node.js, Ruby on Rails, Python, Django, MongoDB, PostgreSQL et AWS. Ma connaissance approfondie de ces technologies me permet de développer des applications web robustes et évolutives, tout en assurant la sécurité et la convivialité de l'interface utilisateur.
+              J'ai travaillé avec une multitude de technologies telles que
+              JavaScript, React, Vue.js, Node.js, Ruby on Rails, Python, Django,
+              MongoDB, PostgreSQL ... Ma connaissance approfondie de ces
+              technologies me permet de développer des applications web robustes
+              et évolutives, tout en assurant la sécurité et la convivialité de
+              l'interface utilisateur.
             </p>
           </div>
         </div>
@@ -106,7 +112,11 @@ const Skilz: React.FC = () => {
         </div>
       </div>
 
-      <div data-aos="fade-left" data-aos-duration="2000" className={style.scrollSkillC}>
+      <div
+        data-aos="fade-left"
+        data-aos-duration="2000"
+        className={style.scrollSkillC}
+      >
         {showLeftButton && (
           <button
             onClick={handleScrollButtonClick("left")}

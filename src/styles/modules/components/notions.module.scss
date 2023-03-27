@@ -64,7 +64,7 @@
     .notiontype {
       @include m.center(100%, 100%);
       margin-bottom: 0rem;
-      @include m.textmaj(#211429d0, 0.75rem, 700, 1px);
+      @include m.textmaj(v.$primary-white, 0.6rem, 400, 1px);
     }
   }
 }

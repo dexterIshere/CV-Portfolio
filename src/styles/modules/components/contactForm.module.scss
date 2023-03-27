@@ -1,0 +1,226 @@
+@use "../../functions/mixin.scss" as m;
+@use "../../functions/variables.scss" as v;
+
+.contactC {
+  margin-top: 4rem;
+  padding: 2rem;
+  @include m.centerAdd(100%, 70vh, none, none);
+  box-shadow: -19px 50px 80px 14px rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(80, 35, 127, 0.79) 0px 0px 1px 1.5px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
+    rgba(205, 139, 255, 0.635) 0px 0px 0px 3px,
+    rgba(0, 0, 0, 0.28) 0px 1px 3px 2px, 0 0 0.1vw 0.1vw #b3a0eb,
+    0 0 0.2vw 0.2vw rgba(162, 85, 207, 0.6196078431),
+    0 0 2vw 0.2vw rgba(191, 109, 212, 0.5490196078),
+    0 0 0.3vw 0.1vw rgba(191, 109, 212, 0.5490196078),
+    0 0 0.3vw 0.2vw rgba(162, 85, 207, 0.6196078431), 0 0 0.1vw 0.1vw #b3a0eb;
+  background: linear-gradient(
+    11deg,
+    rgb(29, 24, 42) 0%,
+    rgb(38, 32, 48) 50%,
+    rgb(46, 34, 57) 70%,
+    rgb(62, 51, 77) 90%,
+    rgb(78, 67, 96) 95%,
+    rgb(90, 81, 109) 100%
+  );
+  border-radius: 10px;
+
+  .contactForm {
+    @include m.column(60%, 100%);
+    position: relative;
+    border-radius: 5px;
+
+    .TcontactC {
+      @include m.textmaj(v.$primary-white, 1.2rem, 500, 4px);
+      margin: 0;
+      margin-left: 0.2rem;
+    }
+
+    .contactSub {
+      cursor: pointer;
+      transition: 600ms;
+      border-radius: 5px;
+      border: none;
+      @include m.textmaj(v.$primary-white, 0.7rem, 400, 2px);
+      box-shadow: rgba(0, 0, 0, 0.42) 0px 2px 2px,
+        rgba(0, 0, 0, 0.57) -3px 7px 8px -3px,
+        rgba(235, 235, 235, 0.1) -2px 3px 10px inset;
+      background: linear-gradient(
+        210deg,
+        rgb(77, 27, 140) 0%,
+        rgb(44, 18, 74) 100%
+      );
+      @include m.centerAdd(6rem, 3rem, center, center);
+      margin-left: auto;
+      margin-right: 0.2rem;
+      margin-top: 0.2rem;
+      text-align: center;
+    }
+
+    .contactSub:hover {
+      letter-spacing: 3px;
+      filter: brightness(1.2);
+    }
+
+    .ContactBox {
+      transition: 600ms;
+      @include m.column(100%, 100%);
+      @include m.textmaj(v.$primary-white, 0.7rem, 400, 4px);
+      border-radius: 5px;
+
+      background: transparent;
+      padding: 0.2rem;
+      input {
+        transition: 600ms;
+        background: none;
+        border: none;
+        border-bottom: 0.25px solid rgba(120, 104, 133, 0.7098039216);
+        outline: none; // border: 1px solid v.$primary-white;
+        // border-radius: 5px;
+        @include m.centerAdd(100%, 2rem !important, none, none);
+        @include m.textmaj(v.$primary-white, 0.65rem, 400, 1px);
+        text-transform: none;
+      }
+
+      .contactInputContainer {
+        transition: 600ms;
+        border-radius: 5px;
+        padding: 0.5rem 0.5rem;
+        @include m.column(100%, auto);
+        margin-bottom: 0.2rem;
+        max-width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+          rgb(0 0 0 / 69%) -1px -3px 2px 0px inset,
+          inset -2px 3px 6px 0px #64646445;
+        background: linear-gradient(
+          36deg,
+          rgb(15, 13, 24) 0%,
+          rgb(17, 14, 31) 25%,
+          rgb(36, 27, 50) 50%,
+          rgb(45, 32, 58) 73%,
+          rgb(68, 43, 86) 100%
+        );
+      }
+
+      .contactInputContainer:hover {
+        box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+          rgb(0 0 0 / 69%) -1px -3px 2px 0px inset,
+          inset -2px 3px 6px 0px #64646445, inset 0 0 0px 1px #b3a0eb,
+          0 0 0px 1px #b3a0eb;
+      }
+
+      .contactInputContainerMess {
+        transition: 600ms;
+        border-radius: 5px;
+        padding: 0.5rem;
+        @include m.column(100%, 100%);
+        box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+          rgb(0 0 0 / 69%) -1px -3px 2px 0px inset,
+          inset -2px 3px 6px 0px #64646445;
+        background: linear-gradient(
+          36deg,
+          rgb(15, 13, 24) 0%,
+          rgb(17, 14, 31) 25%,
+          rgb(36, 27, 50) 50%,
+          rgb(45, 32, 58) 73%,
+          rgb(68, 43, 86) 100%
+        );
+
+        .contactMess {
+          transition: 600ms;
+          @include m.center(100%, 100%);
+          padding: 1rem;
+          border: none;
+          // border: 1px solid v.$primary-white;
+          border-radius: 5px;
+          overflow: auto;
+          outline: none;
+          background: none;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+
+          resize: none;
+
+          @include m.textmaj(v.$primary-white, 0.8rem, 400, 1px);
+          text-transform: none;
+        }
+      }
+
+      .contactInputContainerMess:hover {
+        box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+          rgb(0 0 0 / 69%) -1px -3px 2px 0px inset,
+          inset -2px 3px 6px 0px #64646445, inset 0 0 0px 1px #b3a0eb,
+          0 0 0px 1px #b3a0eb;
+      }
+
+      .contactneed {
+        @include m.centerAdd(100%, auto, space-between, center);
+        margin-bottom: 0.2rem;
+
+        .contactInputContainer {
+          @include m.column(49.75%, 100%);
+          transition: 600ms;
+          margin: 0;
+        }
+
+        .contactEmail,
+        .contactName {
+          @include m.centerAdd(100%, auto, none, none);
+        }
+      }
+
+      .contacturl {
+        @include m.centerAdd(100%, 4rem, none, center);
+      }
+
+      // .contactEmail,
+      // .contactName,
+      // .contacturl,
+      // .contactMess,
+      // .contactSub {
+      //   background: none;
+      // }
+    }
+  }
+
+  .messAndCit {
+    @include m.column(40%, 100%);
+    padding: 2rem;
+
+    .PmessAndCit {
+      @include m.column(100%, fit-content);
+      @include m.textmaj(v.$primary-white, 20px, 700, 1px);
+      text-align: justify;
+      margin: 0;
+    }
+
+    .CmessAndCit {
+      @include m.column(100%, fit-content);
+      @include m.textmaj(v.$primary-white, 1rem, 400, 2px);
+      text-align: justify;
+      text-transform: none;
+      margin: 2rem 0 0.5rem 0;
+    }
+
+    .CPmessAndCit {
+      margin: 0;
+      @include m.column(100%, fit-content);
+      @include m.textmaj(v.$primary-white, 1.2rem, 400, 2px);
+      text-transform: none;
+      font-family: "Fasthand", cursive;
+    }
+  }
+}
+
+.contactError {
+  @include m.textmaj(#ff2768c3, 0.65rem, 700, 2px);
+}
+
+@media screen and (max-width: 600px) {
+  .contactC {
+    .contactForm {
+      width: 100%;
+    }
+  }
+}

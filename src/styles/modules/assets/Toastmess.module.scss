@@ -1,0 +1,30 @@
+@use "../../functions/mixin.scss" as m;
+@use "../../functions/variables.scss" as v;
+
+.toastMessage {
+  position: absolute;
+  display: flex;
+  transform: translateX(110%);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  @include m.centerAdd(auto, 1.5rem, center, center);
+  @include m.textmaj(v.$primary-white, 0.5rem, 400, 1px);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  animation: fade-in-out 2s;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

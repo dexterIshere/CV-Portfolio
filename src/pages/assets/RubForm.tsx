@@ -13,10 +13,9 @@ import { TbBrandDocker } from "react-icons/tb";
 import { SiMongodb, SiPnpm, SiPrisma, SiWebpack, SiJest } from "react-icons/si";
 import Progress from "./Progress";
 
-import { useEffect} from "react";
+import { useEffect } from "react";
 import Aos from "aos";
-import 'aos/dist/aos.css';
-
+import "aos/dist/aos.css";
 
 type SecteurProps = {
   title: string;
@@ -32,15 +31,15 @@ const Secteur = ({ title, contenu }: SecteurProps) => {
     setRotate(isOpen ? "" : "rotate");
   };
   useEffect(() => {
-    Aos.init({duration: 1000});
+    Aos.init({ duration: 1000 });
   }, []);
 
   return (
     <div data-aos="fade-right" className="Secteur">
-      <div className="SecteurHeader">
+      <div onClick={toggleDropdown} className="SecteurHeader">
         <AiOutlineCode />
         <h1 className="FrubT">{title}</h1>
-        <button onClick={toggleDropdown}>
+        <button>
           <RiArrowDropDownLine className={`${rotate}`} />
         </button>
       </div>

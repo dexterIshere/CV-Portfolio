@@ -2,6 +2,11 @@
 import React, { useState } from "react";
 import RubForm from "../assets/RubForm";
 
+import { useEffect} from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css';
+ 
+
 const FormationsC: React.FC = () => {
   const [displayForm, setDisplayForm] = useState(true);
 
@@ -12,6 +17,9 @@ const FormationsC: React.FC = () => {
   const handleClickLangues = () => {
     setDisplayForm(false);
   };
+  useEffect(() => {
+    Aos.init({duration: 1000});
+  }, []);
 
   return (
     <div className="formationsC">
@@ -27,7 +35,7 @@ const FormationsC: React.FC = () => {
         {displayForm ? (
           <RubForm />
         ) : (
-          <div className="rubEtLang">
+          <div data-aos="fade-left" className="rubEtLang">
             <div className="Lang">
               <h1 className="TLang">Français</h1>
               <h1 className="NvlLang">C2</h1>

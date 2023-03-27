@@ -28,6 +28,6 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "src/pages/components/ContactForm.tsx"  ],
   "exclude": ["node_modules"]
 }
