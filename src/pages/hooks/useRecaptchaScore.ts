@@ -1,27 +1,38 @@
-// hooks/useRecaptchaScore.ts
+import { useState, useEffect } from "react";
 
-import { useState, useEffect, useCallback } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-
-export default function useRecaptchaScore(): number | null {
+export default function useRecaptchaScore(recaptchaToken: string | null): number | null {
   const [recaptchaScore, setRecaptchaScore] = useState<number | null>(null);
-  const { executeRecaptcha } = useGoogleReCaptcha();
-
-  const validateRecaptcha = useCallback(async () => {
-    if (!executeRecaptcha) {
-      console.log("Execute recaptcha not yet available");
-      return;
-    }
-
-    const token: string = await executeRecaptcha("contact_form");
-    const score: number = parseFloat(token);
-    console.log("reCAPTCHA score:", score);
-    setRecaptchaScore(score);
-  }, [executeRecaptcha]);
 
   useEffect(() => {
-    validateRecaptcha();
-  }, [validateRecaptcha]);
+    const fetchRecaptchaScore = async () => {
+      if (!recaptchaToken) {
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/verifyRecaptcha", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ recaptchaToken }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          console.log("reCAPTCHA score:", data.score);
+          setRecaptchaScore(data.score);
+        } else {
+          console.log("reCAPTCHA validation failed");
+        }
+      } catch (error) {
+        console.error("Error fetching reCAPTCHA score:", error);
+      }
+    };
+
+    fetchRecaptchaScore();
+  }, [recaptchaToken]);
 
   return recaptchaScore;
 }

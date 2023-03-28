@@ -8,7 +8,6 @@ import {
 import style from "../../styles/modules/components/contactForm.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import useRecaptchaScore from "../hooks/useRecaptchaScore";
 
 const contactSchema = z.object({
   companyEmail: z.string().email("Invalid email address."),
@@ -89,7 +88,23 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
   const [recaptchaToken, setRecaptchaToken] = useState("");
-  const recaptchaScore = useRecaptchaScore();
+
+  const sendApiRequest = async (url: string, data: any) => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response;
+  };
+
+  const showMessage = (message: string, type: "success" | "error") => {
+    setMessage(message);
+    setMessageType(type);
+  };
 
   const onSubmit = async (data: FormValues) => {
     handleReCaptchaVerify();
@@ -98,31 +113,30 @@ export default function ContactForm() {
     localStorage.setItem("lastAttemptTimestamp", Date.now().toString());
 
     try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data, recaptchaToken }),
+      const verifyResponse = await sendApiRequest("/api/verifyRecaptcha", {
+        recaptchaToken,
+      });
+      const verifyData = await verifyResponse.json();
+
+      if (!verifyData.success) {
+        showMessage("reCAPTCHA validation failed", "error");
+        return;
+      }
+
+      // Pas besoin de vérifier le score reCAPTCHA ici, car il est vérifié côté serveur
+
+      const response = await sendApiRequest("/api/sendEmail", {
+        ...data,
+        recaptchaToken,
       });
 
-      // Vérifiez le score reCAPTCHA avant d'envoyer l'email
-      if (recaptchaScore !== null && recaptchaScore >= 0.5) {
-        // ... (envoyer l'email avec les données)
-      } else {
-        console.log("reCAPTCHA validation failed");
-      }
-
       if (response.ok) {
-        setMessage("Email envoyé avec succès.");
-        setMessageType("success");
+        showMessage("Email envoyé avec succès.", "success");
       } else {
-        setMessage("Erreur lors de l'envoi de l'email.");
-        setMessageType("error");
+        showMessage("Erreur lors de l'envoi de l'email.", "error");
       }
     } catch (error) {
-      setMessage("Erreur lors de l'envoi de la requête: " + error);
-      setMessageType("error");
+      showMessage("Erreur lors de l'envoi de la requête: " + error, "error");
     }
   };
 
@@ -184,14 +198,16 @@ export default function ContactForm() {
         </div>
         <div className={style.endForm}>
           {message && <p className={style[messageType]}>{message}</p>}
-          {canSubmit ? (
+          <input className={style.contactSub} type="submit" value="Submit" />
+
+          {/* {canSubmit ? (
             <input className={style.contactSub} type="submit" value="Submit" />
           ) : (
             <p className={style.contactError}>
               You can submit the form again in {countdown} minute
               {countdown > 1 ? "s" : ""}.
             </p>
-          )}
+          )} */}
           <GoogleReCaptcha onVerify={handleReCaptchaVerify} />
         </div>
       </form>
