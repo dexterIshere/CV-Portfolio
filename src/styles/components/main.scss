@@ -119,3 +119,49 @@ main {
   transform: scale(0.8) !important;
   transform-origin: bottom left !important;
 }
+
+.themepick {
+  width: 30%;
+  height: 2rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  transform: skew(-15deg);
+
+  button {
+    width: 100%;
+    border: none;
+    height: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    @include m.textmaj(v.$secondary-white, 15px, 400, 2px);
+    background: linear-gradient(
+      15deg,
+      rgb(18, 16, 23) 0%,
+      rgb(36, 30, 47) 100%
+    );
+
+    cursor: pointer;
+    box-shadow: -19px 50px 80px 14px rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(80, 35, 127, 0.79) 0px 0px 1px 1.5px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
+      rgba(205, 139, 255, 0.635) 0px 0px 0px 3px,
+      rgba(0, 0, 0, 0.28) 0px 1px 3px 2px, 0 0 0.1vw 0.1vw #b3a0eb,
+      0 0 0.2vw 0.2vw rgba(162, 85, 207, 0.6196078431),
+      0 0 2vw 0.2vw rgba(191, 109, 212, 0.5490196078),
+      0 0 0.3vw 0.1vw rgba(191, 109, 212, 0.5490196078),
+      0 0 0.3vw 0.2vw rgba(162, 85, 207, 0.6196078431), 0 0 0.1vw 0.1vw #b3a0eb;
+  }
+
+  button:first-child {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  button:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
