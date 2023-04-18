@@ -137,28 +137,36 @@ main {
     height: 100%;
     border-radius: 5px;
     border-bottom-left-radius: 0px;
-    @include m.textmaj(v.$secondary-white, 15px, 400, 2px);
+    @include m.textmaj(v.$primary-white, 12px, 600, 2px);
     background: linear-gradient(
-      15deg,
-      rgb(18, 16, 23) 0%,
-      rgb(36, 30, 47) 100%
+      60deg,
+      rgb(9, 7, 12) 0%,
+      rgb(17, 14, 23) 29%,
+      rgb(14, 12, 18) 51%,
+      rgb(17, 14, 25) 76%,
+      rgb(13, 9, 20) 100%
     );
-
+    box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+      rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.33) 0px -3px 0px inset,
+      rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
     cursor: pointer;
-    box-shadow: -19px 50px 80px 14px rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(80, 35, 127, 0.79) 0px 0px 1px 1.5px,
-      rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
-      rgba(205, 139, 255, 0.635) 0px 0px 0px 3px,
-      rgba(0, 0, 0, 0.28) 0px 1px 3px 2px, 0 0 0.1vw 0.1vw #b3a0eb,
-      0 0 0.2vw 0.2vw rgba(162, 85, 207, 0.6196078431),
-      0 0 2vw 0.2vw rgba(191, 109, 212, 0.5490196078),
-      0 0 0.3vw 0.1vw rgba(191, 109, 212, 0.5490196078),
-      0 0 0.3vw 0.2vw rgba(162, 85, 207, 0.6196078431), 0 0 0.1vw 0.1vw #b3a0eb;
+
+    p {
+      @include m.center(100%, 100%);
+      margin: 0;
+      transform: skew(15deg);
+      transition: 600ms;
+    }
+    p:hover {
+      letter-spacing: 3px;
+    }
   }
 
   button:first-child {
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
+    border-right: 2px solid #ffffff84;
   }
   button:last-child {
     border-top-left-radius: 0px;

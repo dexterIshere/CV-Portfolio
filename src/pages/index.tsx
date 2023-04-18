@@ -39,9 +39,11 @@ const Home: NextPage = () => {
       <main>
         <div className="themepick">
           <button onClick={() => handleButtonClick(true)}>
-            Development 💻
+            <p>Development 💻</p>
           </button>
-          <button onClick={() => handleButtonClick(false)}>Coaching 🥊</button>
+          <button onClick={() => handleButtonClick(false)}>
+            <p>Coaching 🥊</p>
+          </button>
         </div>
         <div data-aos="zoom-in" className="container">
           {showComponent1 ? <TeoTheDev /> : <TeoTheCoach />}

@@ -1,0 +1,246 @@
+@use "../functions/mixin.scss" as m;
+@use "../functions/variables.scss" as v;
+.CoatchC {
+  @include m.centerAdd(100%, 100%, none, none);
+  height: 90vh;
+
+  .vidC {
+    @include m.centerAdd(40%, 100%, center, center);
+    position: relative;
+
+    .vid {
+      z-index: 15;
+      @include m.centerAdd(100%, 100%, center, center);
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      background: linear-gradient(
+        60deg,
+        rgb(9, 7, 12) 0%,
+        rgb(17, 14, 23) 29%,
+        rgb(14, 12, 18) 51%,
+        rgb(17, 14, 25) 76%,
+        rgb(13, 9, 20) 100%
+      );
+      box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+        rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.33) 0px -3px 0px inset,
+        rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+    }
+  }
+
+  .ExplainC {
+    padding: 2rem;
+    @include m.centerAdd(60%, 100%, none, center);
+    flex-direction: column;
+
+    .DigitTitle {
+      position: relative;
+      width: 60%;
+      height: 3rem;
+
+      .Digit {
+        z-index: 15;
+        @include m.centerAdd(100%, 100%, center, center);
+        margin: 0;
+        background: linear-gradient(
+          60deg,
+          rgb(9, 7, 12) 0%,
+          rgb(17, 14, 23) 29%,
+          rgb(14, 12, 18) 51%,
+          rgb(17, 14, 25) 76%,
+          rgb(13, 9, 20) 100%
+        );
+        box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+          rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.33) 0px -3px 0px inset,
+          rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+        border-radius: 5px;
+        font-family: "Orbitron", sans-serif;
+        @include m.textmaj(v.$primary-white, 1rem, 600, 6px);
+
+        h1 {
+          margin: 0;
+        }
+      }
+    }
+    .diplomePart {
+      @include m.centerAdd(100%, 25%, none, none);
+      background: linear-gradient(
+        36deg,
+        rgb(160, 52, 197) 0%,
+        rgb(98, 43, 174) 100%
+      );
+
+      .Fakebg {
+        right: -2px;
+        top: -2px;
+      }
+    }
+    .ExpPart {
+      @include m.centerAdd(100%, 75%, none, none);
+      padding: 1rem;
+      .Bgroate {
+        right: -50%;
+        background: linear-gradient(
+          36deg,
+          rgb(212, 81, 255) 0%,
+          rgb(145, 51, 252) 100%
+        );
+        animation: spin 10s linear infinite;
+      }
+
+      .Fakebg {
+        left: -2px;
+        top: -2px;
+      }
+    }
+
+    .diplomePart,
+    .ExpPart {
+      overflow: hidden;
+      position: relative;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+        rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.33) 0px -1px 0px inset,
+        rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+      filter: brightness(1.5);
+
+      .Fakebg {
+        @include m.centerAdd(100%, 100%, none, none);
+        position: absolute;
+        background: linear-gradient(
+          11deg,
+          rgb(29, 24, 42) 0%,
+          rgb(38, 32, 48) 30%,
+          rgb(46, 34, 57) 50%,
+          rgb(62, 51, 77) 80%,
+          rgb(78, 67, 96) 95%,
+          rgb(90, 81, 109) 100%
+        );
+        box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+          rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.33) 0px -1.5px 0px inset,
+          rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+        border-radius: 10px;
+      }
+    }
+
+    .diplExplain {
+      z-index: 10;
+      @include m.centerAdd(100%, 100%, none, center);
+      padding: 1rem;
+
+      .degreLogo {
+        @include m.centerAdd(5.5rem, 5.5rem, center, center);
+        background: linear-gradient(
+          36deg,
+          rgb(15, 13, 24) 0%,
+          rgb(17, 14, 31) 25%,
+          rgb(36, 27, 50) 50%,
+          rgb(45, 32, 58) 73%,
+          rgb(68, 43, 86) 100%
+        );
+        border-radius: 50%;
+        @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
+        box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+          rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
+          inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
+      }
+    }
+
+    .competentiasC {
+      z-index: 15;
+      @include m.centerAdd(100%, 100%, none, none);
+
+      .COMPCAPA {
+        @include m.centerAdd(55%, 100%, none, space-between);
+        flex-direction: column;
+
+        .COMPCAPAt {
+          @include m.textmaj(v.$primary-white, 1.2rem, 600, 6px);
+          padding: 0.5rem 1rem;
+          background: linear-gradient(
+            36deg,
+            rgb(15, 13, 24) 0%,
+            rgb(17, 14, 31) 25%,
+            rgb(36, 27, 50) 50%,
+            rgb(45, 32, 58) 73%,
+            rgb(68, 43, 86) 100%
+          );
+          box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+            rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.33) 0px -1.5px 0px inset,
+            rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+          margin: 0;
+          text-align: center;
+          border-radius: 5px;
+        }
+        .COMPCAPAp {
+          ul {
+            li {
+              @include m.textmaj(v.$primary-white, 0.7rem, 300, 4px);
+              margin: 0.5rem 0rem;
+            }
+          }
+        }
+      }
+
+      .COMPdwld {
+        @include m.centerAdd(40%, 100%, none, none);
+        margin-left: auto;
+
+        .dwldBox {
+          @include m.centerAdd(100%, 100%, none, none);
+          border-radius: 5px;
+          background: linear-gradient(
+            36deg,
+            rgb(15, 13, 24) 0%,
+            rgb(17, 14, 31) 25%,
+            rgb(36, 27, 50) 50%,
+            rgb(45, 32, 58) 73%,
+            rgb(68, 43, 86) 100%
+          );
+          box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
+            rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.33) 0px -1.5px 0px inset,
+            rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+        }
+      }
+    }
+  }
+}
+
+.Digitbg {
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: none;
+  position: absolute;
+  align-items: none;
+  margin: 0;
+  background: linear-gradient(
+    36deg,
+    rgb(160, 52, 197) 0%,
+    rgb(98, 43, 174) 100%
+  );
+  filter: blur(15px);
+  animation: fade 15s linear infinite;
+}
+
+.Bgroate {
+  position: absolute;
+  @include m.centerAdd(200%, 50%, none, none);
+  z-index: -5;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
