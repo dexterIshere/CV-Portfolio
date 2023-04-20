@@ -213,10 +213,12 @@ export default function ContactForm() {
       </form>
       <div className={style.messAndCit}>
         <p className={style.PmessAndCit}>
-          Des questions où des propositions ? N'hésitez pas à utiliser ce
-          formulaire pour me contacter. Je m'engage à vous répondre dès que
-          possible.
-          <br /> Merci de votre intérêt !
+          Des questions où des propositions ?<br /> N'hésitez pas à utiliser ce
+          formulaire pour me contacter.
+          <br />
+          Je m'engage à vous répondre dès quepossible.
+          <br />
+          Merci de votre intérêt !
         </p>
         <p className={style.CmessAndCit}>
           "La victoire dépend de la capacité de l'oreille à écouter et de la

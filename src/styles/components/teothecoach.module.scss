@@ -134,24 +134,7 @@
       padding: 1rem;
 
       .formaplain {
-        @include m.centerAdd(60%, 100%, none, none);
-
-        .degreLogo {
-          @include m.centerAdd(5.5rem, 5.5rem, center, center);
-          background: linear-gradient(
-            36deg,
-            rgb(15, 13, 24) 0%,
-            rgb(17, 14, 31) 25%,
-            rgb(36, 27, 50) 50%,
-            rgb(45, 32, 58) 73%,
-            rgb(68, 43, 86) 100%
-          );
-          border-radius: 50%;
-          @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
-          box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
-            rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
-            inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
-        }
+        @include m.centerAdd(60%, 100%, none, center);
       }
 
       .formaplainctx {
@@ -171,23 +154,6 @@
       }
       .activitySet {
         @include m.centerAdd(40%, 100%, none, center);
-
-        .activityLogo {
-          @include m.centerAdd(5.5rem, 5.5rem, center, center);
-          background: linear-gradient(
-            36deg,
-            rgb(15, 13, 24) 0%,
-            rgb(17, 14, 31) 25%,
-            rgb(36, 27, 50) 50%,
-            rgb(45, 32, 58) 73%,
-            rgb(68, 43, 86) 100%
-          );
-          border-radius: 50%;
-          @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
-          box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
-            rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
-            inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
-        }
       }
     }
 
@@ -313,5 +279,101 @@
   }
   100% {
     transform: rotate(1turn);
+  }
+}
+
+.activityLogo,
+.degreLogo {
+  @include m.centerAdd(auto, auto, center, center);
+  padding: 1rem;
+
+  background: linear-gradient(
+    36deg,
+    rgb(15, 13, 24) 0%,
+    rgb(17, 14, 31) 25%,
+    rgb(36, 27, 50) 50%,
+    rgb(45, 32, 58) 73%,
+    rgb(68, 43, 86) 100%
+  );
+  border-radius: 50%;
+  @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
+  box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+    rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
+    inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
+}
+
+@media screen and (max-width: 600px) {
+  .CoatchC {
+    flex-direction: column;
+    height: 100%;
+
+    .vidC {
+      width: 100%;
+      height: 100vh;
+      padding: 0.5rem;
+
+      .vid {
+        border-radius: 15px;
+      }
+    }
+
+    .diplExplain {
+      flex-direction: column;
+
+      .formaplain {
+        width: 100% !important;
+      }
+    }
+
+    .activitySet {
+      margin-top: 1rem;
+      width: 100% !important;
+    }
+
+    .ExplainC {
+      width: 100%;
+      padding: 1rem;
+
+      .DigitTitle {
+        width: 100%;
+      }
+    }
+
+    .degreLogo,
+    .activityLogo {
+      padding: 0.5rem;
+      @include m.textmaj(v.$primary-white, 2.5rem !important, 400, none);
+    }
+
+    .formaplainctx {
+      .formaplainT {
+        @include m.textmaj(v.$primary-white, 1rem !important, 400, none);
+      }
+      p {
+        @include m.textmaj(v.$primary-white, 0.5rem !important, 400, none);
+      }
+    }
+
+    .competentiasC {
+      flex-direction: column;
+
+      .COMPCAPA {
+        width: 100% !important;
+        margin-bottom: 1rem;
+      }
+
+      .COMPdwld {
+        width: 100% !important;
+        margin: 0;
+
+        .dwldBox {
+          button {
+            svg {
+              width: 50% !important;
+            }
+          }
+        }
+      }
+    }
   }
 }

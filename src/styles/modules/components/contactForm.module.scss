@@ -260,6 +260,19 @@
   .contactC {
     flex-direction: column;
     height: 100%;
+    margin-top: 2rem;
+
+    .contactneed {
+      flex-direction: column;
+      height: auto !important;
+      margin: 0 !important;
+
+      .contactInputContainer {
+        width: 100% !important;
+        margin-bottom: 0.2rem !important;
+      }
+    }
+
     .contactForm {
       width: 100%;
 
@@ -269,6 +282,7 @@
     }
 
     .messAndCit {
+      display: none;
       margin-top: 2rem;
       width: 100%;
       padding: 0rem;
@@ -276,7 +290,9 @@
       .PmessAndCit,
       .CmessAndCit,
       .CPmessAndCit {
-        text-align: justify;
+        display: none;
+        text-align: center;
+        font-size: 1.2rem;
       }
     }
   }
