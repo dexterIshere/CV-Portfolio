@@ -22,48 +22,58 @@ const PorfolioC: React.FC = () => {
               <SiReact />
             </div>
           }
-          Name={"Bruh"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"SolidGroup"}
+          Desc={
+            "Un jeu de carte deckbuilding sur navigateur, où les cartes sont représenté par Téo et ses potes"
+          }
         />
         <AprojectC
           top={undefined}
-          Name={"Caca"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"Dojo"}
+          Desc={
+            "Dojo est un moteur de recherche, qui peut offrir une bonne alternantive à google"
+          }
         />
         <AprojectC
           top={undefined}
-          Name={"Pipi"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"10LEX"}
+          Desc={
+            "Est une extention web qui permet de pouvoir afficher le contenu des pages sous une forme addapté aux personnes dyslexiques"
+          }
         />
         <AprojectC
           top={undefined}
-          Name={"Zizi"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"LucasSette"}
+          Desc={
+            "Lucassette est un bot discord qui envoie des disquettes à la demmande"
+          }
         />
         <AprojectC
           top={undefined}
-          Name={"Zgeg"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"Nucleon"}
+          Desc={"Nucleon est un nigateur web dans le même style que Arc"}
         />
         <AprojectC
           top={undefined}
-          Name={"Portable"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"Unique"}
+          Desc={
+            "Unique est une aplication de tchat décentralisé, donc mieux que discord"
+          }
         />
         <AprojectC
           top={undefined}
-          Name={"Potatoes"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"CapibaraFee"}
+          Desc={"CapibaraFee c'est un buy me a coffe like, mais que pour moi"}
         />
-        <AprojectC
+        {/* <AprojectC
           top={undefined}
           Name={"Eliel"}
           Desc={"Mauris gravida odio convallis nunc faucibus"}
-        />
+        /> */}
         <AprojectC
           top={undefined}
-          Name={"Minecraft"}
-          Desc={"Mauris gravida odio convallis nunc faucibus"}
+          Name={"Minecraft v0.0v"}
+          Desc={"un mode minecraft"}
         />
       </div>
     </div>

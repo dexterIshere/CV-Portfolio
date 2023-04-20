@@ -44,12 +44,12 @@
         @include m.centerAdd(100%, 100%, center, center);
         margin: 0;
         background: linear-gradient(
-          60deg,
-          rgb(9, 7, 12) 0%,
-          rgb(17, 14, 23) 29%,
-          rgb(14, 12, 18) 51%,
-          rgb(17, 14, 25) 76%,
-          rgb(13, 9, 20) 100%
+          36deg,
+          rgb(15, 13, 24) 0%,
+          rgb(17, 14, 31) 25%,
+          rgb(36, 27, 50) 50%,
+          rgb(45, 32, 58) 73%,
+          rgb(68, 43, 86) 100%
         );
         box-shadow: rgba(0, 0, 0, 0.36) 0px 2px 4px,
           rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
@@ -57,7 +57,7 @@
           rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
         border-radius: 5px;
         font-family: "Orbitron", sans-serif;
-        @include m.textmaj(v.$primary-white, 1rem, 600, 6px);
+        @include m.textmaj(v.$primary-white, 0.8rem, 600, 6px);
 
         h1 {
           margin: 0;
@@ -133,21 +133,61 @@
       @include m.centerAdd(100%, 100%, none, center);
       padding: 1rem;
 
-      .degreLogo {
-        @include m.centerAdd(5.5rem, 5.5rem, center, center);
-        background: linear-gradient(
-          36deg,
-          rgb(15, 13, 24) 0%,
-          rgb(17, 14, 31) 25%,
-          rgb(36, 27, 50) 50%,
-          rgb(45, 32, 58) 73%,
-          rgb(68, 43, 86) 100%
-        );
-        border-radius: 50%;
-        @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
-        box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
-          rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
-          inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
+      .formaplain {
+        @include m.centerAdd(60%, 100%, none, none);
+
+        .degreLogo {
+          @include m.centerAdd(5.5rem, 5.5rem, center, center);
+          background: linear-gradient(
+            36deg,
+            rgb(15, 13, 24) 0%,
+            rgb(17, 14, 31) 25%,
+            rgb(36, 27, 50) 50%,
+            rgb(45, 32, 58) 73%,
+            rgb(68, 43, 86) 100%
+          );
+          border-radius: 50%;
+          @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
+          box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+            rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
+            inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
+        }
+      }
+
+      .formaplainctx {
+        @include m.centerAdd(auto, 100%, center, none);
+        flex-direction: column;
+        padding: 0rem 1rem;
+        // border-right: 1px solid v.$primary-white;
+
+        .formaplainT {
+          margin: 0;
+          @include m.textmaj(v.$primary-white, 1.2rem, 600, 4px);
+        }
+        p {
+          @include m.textmaj(v.$secondary-white, 0.8rem, 500, 4px);
+          margin: 0;
+        }
+      }
+      .activitySet {
+        @include m.centerAdd(40%, 100%, none, center);
+
+        .activityLogo {
+          @include m.centerAdd(5.5rem, 5.5rem, center, center);
+          background: linear-gradient(
+            36deg,
+            rgb(15, 13, 24) 0%,
+            rgb(17, 14, 31) 25%,
+            rgb(36, 27, 50) 50%,
+            rgb(45, 32, 58) 73%,
+            rgb(68, 43, 86) 100%
+          );
+          border-radius: 50%;
+          @include m.textmaj(v.$primary-white, 3.5rem, 400, none);
+          box-shadow: rgba(0, 0, 0, 0.457) 0px 2px 4px,
+            rgba(0, 0, 0, 0.69) -1px -3px 2px 0px inset,
+            inset -2px 3px 6px 0px rgba(100, 100, 100, 0.2705882353);
+        }
       }
     }
 
@@ -193,7 +233,8 @@
         margin-left: auto;
 
         .dwldBox {
-          @include m.centerAdd(100%, 100%, none, none);
+          padding: 1rem;
+          @include m.centerAdd(100%, 100%, center, center);
           border-radius: 5px;
           background: linear-gradient(
             36deg,
@@ -207,6 +248,36 @@
             rgba(0, 0, 0, 0.26) 0px 7px 13px -3px,
             rgba(0, 0, 0, 0.33) 0px -1.5px 0px inset,
             rgba(211, 160, 255, 0.13) 0px 2px 1px inset;
+          flex-direction: column;
+
+          button {
+            @include m.centerAdd(100%, 100%, space-evenly, center);
+            padding: 0;
+            border: 0px;
+            background: none;
+            cursor: pointer;
+            flex-direction: column;
+            svg {
+              transition: 600ms;
+              @include m.centerAdd(100%, 70%, center, center);
+              @include m.textmaj(v.$secondary-white, 1rem, 300, 4px);
+            }
+
+            svg:hover {
+              transform: scale(1.1);
+            }
+
+            .Memoire {
+              margin: 0;
+              transition: 600ms;
+              @include m.centerAdd(100%, auto, center, center);
+              @include m.textmaj(v.$primary-white, 0.8rem, 300, 4px);
+            }
+
+            .Memoire:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }

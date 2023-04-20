@@ -1,8 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import style from "../../styles/components/teothecoach.module.scss";
 
 import { TbSchool } from "react-icons/tb";
+import { MdSportsMma } from "react-icons/md";
+import { RiFileDownloadFill } from "react-icons/ri";
+
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -11,6 +14,16 @@ const TeoTheCoach: React.FC = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
+  const handleDownload = () => {
+    const filePath = "/RouxTéoL3Staps.pdf";
+    const fileName = "RouxTéoL3Staps.pdf";
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = filePath;
+    downloadLink.download = fileName;
+    downloadLink.click();
+  };
 
   return (
     <div className={style.CoatchC}>
@@ -28,8 +41,25 @@ const TeoTheCoach: React.FC = () => {
         <div className={style.diplomePart}>
           <div className={style.Fakebg}></div>
           <div className={style.diplExplain}>
-            <div className={style.degreLogo}>
-              <TbSchool />
+            <div className={style.formaplain}>
+              <div className={style.degreLogo}>
+                <TbSchool />
+              </div>
+              <div className={style.formaplainctx}>
+                <h1 className={style.formaplainT}>Université de Toulon</h1>
+                <p>License STAPS</p>
+                <p>Entrainement Sportif</p>
+              </div>
+            </div>
+            <div className={style.activitySet}>
+              <div className={style.activityLogo}>
+                <MdSportsMma />
+              </div>
+              <div className={style.formaplainctx}>
+                <h1 className={style.formaplainT}>Activités</h1>
+                <p>Kempo</p>
+                <p>MMA</p>
+              </div>
             </div>
           </div>
         </div>
@@ -41,17 +71,22 @@ const TeoTheCoach: React.FC = () => {
               <h1 className={style.COMPCAPAt}>Experiences</h1>
               <div className={style.COMPCAPAp}>
                 <ul>
-                  <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </li>
-                  <li>Quisque fermentum leo sed odio gravida fermentum.</li>
-                  <li>Sed a neque sit amet enim varius semper.</li>
-                  <li>Vivamus nec lacus a sapien accumsan aliquam.</li>
+                  <li>Planification d'entrainement</li>
+                  <li>Cardio</li>
+                  <li>Prise de masse</li>
+                  <li>Sèche</li>
                 </ul>
               </div>
             </div>
             <div className={style.COMPdwld}>
-              <div className={style.dwldBox}></div>
+              <div className={style.dwldBox}>
+                <button onClick={handleDownload}>
+                  <RiFileDownloadFill />
+                  <div className={style.Memoire}>
+                    <p>Télécharger mon prémémoire de L3 ici</p>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
